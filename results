@@ -1,0 +1,123 @@
+features.update(has_feats(tweet['text'],opt[0]))
+features.update(has_feats(tweet['text'],opt[1]))
+features.update(has_feats(tweet['text'],opt[2]))
+features['has_hashtags'] = (len(tweet['entities']['hashtags'])>0 )
+
+
+F-measure: 0.58 - Accuracy: 0.58 - Precision: 0.59 - Recall: 0.58
+Most Informative Features
+             has(travel) = True            False : True   =      9.6 : 1.0
+              has(syria) = True            False : True   =      7.1 : 1.0
+            has(retweet) = True             True : False  =      6.7 : 1.0
+              has(1xtra) = True            False : True   =      5.6 : 1.0
+               has(epic) = True             True : False  =      3.8 : 1.0
+              has(messi) = True             True : False  =      3.7 : 1.0
+               has(jobs) = True             True : False  =      3.3 : 1.0
+               has(yolo) = True             True : False  =      3.0 : 1.0
+             has(nature) = True            False : True   =      3.0 : 1.0
+              has(egypt) = True            False : True   =      3.0 : 1.0
+             has(ufc160) = True            False : True   =      3.0 : 1.0
+         has(prometheus) = True            False : True   =      2.9 : 1.0
+               has(heat) = True             True : False  =      2.7 : 1.0
+              has(smile) = True             True : False  =      2.6 : 1.0
+             has(cancer) = True            False : True   =      2.5 : 1.0
+             has(itunes) = True             True : False  =      2.4 : 1.0
+               has(ipad) = True            False : True   =      2.4 : 1.0
+          has(economist) = True             True : False  =      2.4 : 1.0
+              has(twins) = True             True : False  =      2.4 : 1.0
+               has(swag) = True             True : False  =      2.4 : 1.0
+[0.5838672580910136, 0.5778333333333333, 0.5851168916694106, 0.5826229508196721]
+
+
+features['has_default_profile'] = user['default_profile']
+features.update(has_feats(tweet['text'],opt[0]))
+features.update(has_feats(tweet['text'],opt[1]))
+features.update(has_feats(tweet['text'],opt[2]))
+features['has_hashtags'] = (len(tweet['entities']['hashtags'])>0 )
+features.update(log_feat(user['statuses_count'],"log_statuses_count"))
+
+F-measure: 0.61 - Accuracy: 0.58 - Precision: 0.57 - Recall: 0.65
+Most Informative Features
+             has(travel) = True            False : True   =      9.0 : 1.0
+              has(syria) = True            False : True   =      6.2 : 1.0
+            has(retweet) = True             True : False  =      6.2 : 1.0
+           has(giveaway) = True            False : True   =      5.7 : 1.0
+              has(messi) = True             True : False  =      5.0 : 1.0
+             has(ufc160) = True            False : True   =      5.0 : 1.0
+            has(rihanna) = True             True : False  =      3.7 : 1.0
+              has(egypt) = True            False : True   =      3.7 : 1.0
+               has(epic) = True             True : False  =      3.6 : 1.0
+              has(smile) = True             True : False  =      3.6 : 1.0
+               has(iran) = True             True : False  =      3.4 : 1.0
+              has(1xtra) = True            False : True   =      3.4 : 1.0
+         has(prometheus) = True            False : True   =      3.0 : 1.0
+              has(gifts) = True            False : True   =      3.0 : 1.0
+               has(auto) = True            False : True   =      3.0 : 1.0
+         has(srinivasan) = True             True : False  =      2.7 : 1.0
+             has(purple) = True            False : True   =      2.4 : 1.0
+              has(cobra) = True            False : True   =      2.4 : 1.0
+    log_statuses_count<2 = True            False : True   =      2.4 : 1.0
+             has(neymar) = True             True : False  =      2.4 : 1.0
+[0.6062111801242236, 0.5773333333333334, 0.5687645687645687, 0.648936170212766]
+
+features['has_default_profile'] = user['default_profile']
+features.update(has_feats(tweet['text'],opt[0]))
+features.update(has_feats(tweet['text'],opt[1]))
+features.update(has_feats(tweet['text'],opt[2]))
+features['has_hashtags'] = (len(tweet['entities']['hashtags'])>0 )
+features.update(log_feat(user['followers_count'],"log_follow_count"))
+features.update(log_feat(user['friends_count'],"log_friends_count"))
+features.update(log_feat(user['statuses_count'],"log_statuses_count"))
+
+F-measure: 0.65 - Accuracy: 0.67 - Precision: 0.70 - Recall: 0.60
+Most Informative Features
+           has(giveaway) = True            False : True   =      6.3 : 1.0
+              has(syria) = True            False : True   =      6.2 : 1.0
+            has(retweet) = True             True : False  =      5.8 : 1.0
+              has(messi) = True             True : False  =      4.3 : 1.0
+              has(1xtra) = True            False : True   =      3.8 : 1.0
+              has(dubai) = True            False : True   =      3.7 : 1.0
+               has(epic) = True             True : False  =      3.5 : 1.0
+               has(jobs) = True             True : False  =      3.3 : 1.0
+      log_follow_count<2 = True            False : True   =      3.3 : 1.0
+             has(nature) = True            False : True   =      3.0 : 1.0
+             has(ufc160) = True            False : True   =      3.0 : 1.0
+         has(prometheus) = True            False : True   =      2.8 : 1.0
+              has(smile) = True             True : False  =      2.8 : 1.0
+             has(neymar) = True             True : False  =      2.7 : 1.0
+      log_follow_count>3 = True             True : False  =      2.6 : 1.0
+               has(heat) = True             True : False  =      2.5 : 1.0
+                 has(f1) = True            False : True   =      2.4 : 1.0
+    log_statuses_count<2 = True            False : True   =      2.4 : 1.0
+              has(truth) = True             True : False  =      2.4 : 1.0
+             has(sistar) = True            False : True   =      2.3 : 1.0
+[0.6450107681263461, 0.6703333333333333, 0.696241766757071, 0.600802407221665]
+
+F-measure: 0.64 - Accuracy: 0.66 - Precision: 0.70 - Recall: 0.59
+Most Informative Features
+                verified = True             True : False  =     17.2 : 1.0
+             has(travel) = True            False : True   =     10.2 : 1.0
+              has(syria) = True            False : True   =      7.2 : 1.0
+            has(retweet) = True             True : False  =      6.4 : 1.0
+              has(messi) = True             True : False  =      5.0 : 1.0
+               has(epic) = True             True : False  =      4.0 : 1.0
+            has(rihanna) = True             True : False  =      3.7 : 1.0
+             has(nature) = True            False : True   =      3.6 : 1.0
+              has(dubai) = True            False : True   =      3.6 : 1.0
+         has(prometheus) = True            False : True   =      3.5 : 1.0
+      log_follow_count<2 = True            False : True   =      3.4 : 1.0
+              has(egypt) = True            False : True   =      3.0 : 1.0
+         has(followback) = True            False : True   =      3.0 : 1.0
+              has(1xtra) = True            False : True   =      3.0 : 1.0
+           has(oklahoma) = True             True : False  =      2.8 : 1.0
+             has(neymar) = True             True : False  =      2.8 : 1.0
+                 has(f1) = True            False : True   =      2.8 : 1.0
+      log_follow_count>3 = True             True : False  =      2.6 : 1.0
+          has(barcelona) = True             True : False  =      2.6 : 1.0
+             has(health) = True             True : False  =      2.6 : 1.0
+[0.6380106571936056, 0.6603333333333333, 0.6969344198680636, 0.5882738290206354]
+
+
+
+
+
